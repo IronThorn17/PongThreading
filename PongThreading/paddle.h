@@ -7,8 +7,9 @@ public:
     void moveDown();
     void update();
     void draw();
+    float x, y, width, height, speed;
 
 private:
-    float x, y, width, height, speed;
+
 };
 

@@ -28,14 +28,14 @@ float rightPaddleS = 0.01f;
 float ballX = 0.0f;
 float ballY = 0.0f;
 float ballR = 0.02f;
-float ballS = 0.3f;
+float ballS = 0.5f;
 
 bool startGame = true;
 
 Game::Game()
     : leftPaddle(leftPaddleX, leftPaddleY, leftPaddleW, leftPaddleH, leftPaddleS),
       rightPaddle(rightPaddleX, rightPaddleY, rightPaddleW, rightPaddleH, rightPaddleS),
-      ball(ballX, ballY, ballR, ballS) {
+      ball(ballX, ballY, ballR, ballS, leftPaddle, rightPaddle) {
 
 
     if (!glfwInit()) {
