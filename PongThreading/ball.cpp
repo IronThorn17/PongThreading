@@ -5,7 +5,7 @@
 #include <cstdlib>
 
 Ball::Ball(float startX, float startY, float size, float speed)
-    : x(startX), y(startY), size(size), speed(speed), directionX(1.0f), directionY(1.0f), game(game) {}
+    : x(startX), y(startY), size(size), speed(speed), directionX(1.0f), directionY(1.0f) {}
 
 void Ball::update() {
     Ball::moveBall();
@@ -60,7 +60,7 @@ void Ball::handleScreenCollisions() {
     }
 
     if (x <= Game::getScreenWidth()) {
-        glfwSetWindowShouldClose(game.getWindow(), GLFW_TRUE);
+        //glfwSetWindowShouldClose(game.getWindow(), GLFW_TRUE);
     }
 
 
