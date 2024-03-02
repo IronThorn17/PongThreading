@@ -1,0 +1,7 @@
+﻿  game.cpp
+C:\Users\woodr\Documents\School\2024 Spring\CSCI 310-01 Intro to Operating Systems\PongThreading\PongThreading\game.cpp(36,10): error C2440: 'initializing': cannot convert from 'initializer list' to 'Ball *'
+C:\Users\woodr\Documents\School\2024 Spring\CSCI 310-01 Intro to Operating Systems\PongThreading\PongThreading\game.cpp(36,10): message : The initializer contains too many elements
+C:\Users\woodr\Documents\School\2024 Spring\CSCI 310-01 Intro to Operating Systems\PongThreading\PongThreading\game.cpp(36,39): error C2439: 'Game::ball': member could not be initialized
+C:\Users\woodr\Documents\School\2024 Spring\CSCI 310-01 Intro to Operating Systems\PongThreading\PongThreading\Game.h(23,11): message : see declaration of 'Game::ball'
+  main.cpp
+  Generating Code...
