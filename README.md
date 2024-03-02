@@ -1,6 +1,6 @@
 # PongThreading
 
-PongThreading is a simple Pong game implemented using OpenGL and GLFW.
+PongThreading is a simple Pong game implemented using OpenGL and GLFW, featuring CPU threading for enhanced performance.
 
 ## Dependencies
 
