@@ -1,7 +1,7 @@
-﻿  game.cpp
-C:\Users\woodr\Documents\School\2024 Spring\CSCI 310-01 Intro to Operating Systems\PongThreading\PongThreading\game.cpp(36,10): error C2440: 'initializing': cannot convert from 'initializer list' to 'Ball *'
-C:\Users\woodr\Documents\School\2024 Spring\CSCI 310-01 Intro to Operating Systems\PongThreading\PongThreading\game.cpp(36,10): message : The initializer contains too many elements
-C:\Users\woodr\Documents\School\2024 Spring\CSCI 310-01 Intro to Operating Systems\PongThreading\PongThreading\game.cpp(36,39): error C2439: 'Game::ball': member could not be initialized
-C:\Users\woodr\Documents\School\2024 Spring\CSCI 310-01 Intro to Operating Systems\PongThreading\PongThreading\Game.h(23,11): message : see declaration of 'Game::ball'
+﻿  ball.cpp
+  game.cpp
   main.cpp
   Generating Code...
+  LINK : C:\Users\woodr\Documents\School\2024 Spring\CSCI 310-01 Intro to Operating Systems\PongThreadingProject\PongThreading\x64\Debug\PongThreading.exe not found or not built by the last incremental link; performing full link
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  PongThreading.vcxproj -> C:\Users\woodr\Documents\School\2024 Spring\CSCI 310-01 Intro to Operating Systems\PongThreadingProject\PongThreading\x64\Debug\PongThreading.exe

@@ -5,8 +5,6 @@
 #include "Paddle.h"
 #include "Ball.h"
 
-class Ball;
-
 class Game {
 public:
     Game();
@@ -20,7 +18,7 @@ public:
 private:
     GLFWwindow* window;
     Paddle leftPaddle, rightPaddle;
-    Ball* ball;
+    Ball ball;
 
     void processInput();
     void update();

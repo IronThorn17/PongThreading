@@ -1,5 +1,7 @@
 // game.cpp
 #include "Game.h"
+#include "ball.h"
+#include "paddle.h"
 #include <stdexcept>
 #include <iostream>
 #include <GLFW/glfw3.h>
@@ -32,8 +34,8 @@ bool startGame = true;
 
 Game::Game()
     : leftPaddle(leftPaddleX, leftPaddleY, leftPaddleW, leftPaddleH, leftPaddleS),
-    rightPaddle(rightPaddleX, rightPaddleY, rightPaddleW, rightPaddleH, rightPaddleS),
-    ball(ballX, ballY, ballR, ballS) { // x, y, radius, speed
+      rightPaddle(rightPaddleX, rightPaddleY, rightPaddleW, rightPaddleH, rightPaddleS),
+      ball(ballX, ballY, ballR, ballS) {
 
 
     if (!glfwInit()) {
