@@ -10,6 +10,7 @@ public:
     Game();
     ~Game();
     void run();
+    void Debugging();
 
     GLFWwindow* getWindow() const;
     static int getScreenWidth() { return screenW; }

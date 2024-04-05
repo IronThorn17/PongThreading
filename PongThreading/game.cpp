@@ -28,7 +28,7 @@ float rightPaddleS = 0.01f;
 float ballX = 0.0f;
 float ballY = 0.0f;
 float ballR = 0.02f;
-float ballS = 0.5f;
+float ballS = 0.2f;
 
 bool startGame = true;
 
@@ -110,6 +110,8 @@ void Game::update() {
     leftPaddle.update();
     rightPaddle.update();
     ball.update();
+
+    Debugging();
 
     // Add game logic such as collision detection, scoring, etc.
 }

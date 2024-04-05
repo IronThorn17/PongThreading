@@ -1,4 +1,3 @@
-﻿  ball.cpp
-  game.cpp
-  Generating Code...
-  PongThreading.vcxproj -> C:\Users\woodr\Documents\School\2024 Spring\CSCI 310-01 Intro to Operating Systems\PongThreadingProject\PongThreading\x64\Debug\PongThreading.exe
+﻿LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+game.obj : error LNK2019: unresolved external symbol "public: void __cdecl Game::Debugging(void)" (?Debugging@Game@@QEAAXXZ) referenced in function "private: void __cdecl Game::update(void)" (?update@Game@@AEAAXXZ)
+C:\Users\woodr\Documents\School\2024 Spring\CSCI 310-01 Intro to Operating Systems\PongThreadingProject\PongThreading\x64\Debug\PongThreading.exe : fatal error LNK1120: 1 unresolved externals

@@ -69,9 +69,11 @@ void Ball::handleScreenCollisions() {
     // Check for collisions with the sides of the screen
     if (x + size >= 1) {
         // Add Point to Player 1
+        std::cout << "Right Screen" << std::endl;
     }
     else if (x - size <= -1) {
         // Add Point to Player 2
+        std::cout << "Left Screen" << std::endl;
     }
 }
 
