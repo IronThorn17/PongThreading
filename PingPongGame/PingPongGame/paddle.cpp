@@ -14,14 +14,23 @@ void Paddle::update() {
     if (down && y > -1 + 0.15f) y -= speed; // Ensure paddle stays within the lower boundary
 }
 
-// Method to draw the paddle on the screen using OpenGL commands
 void Paddle::draw() const {
+    if (x < 0) {
+        // Left paddle, set color to green
+        glColor3f(0.0f, 1.0f, 0.0f); // RGB for green
+    }
+    else {
+        // Right paddle, set color to yellow
+        glColor3f(1.0f, 1.0f, 0.0f); // RGB for yellow
+    }
+
     glBegin(GL_QUADS); // Start drawing a quad
-    // Specify the four vertices of the quad (paddle) based on its position and size
     glVertex2f(x - 0.02f, y - 0.15f); // Bottom left
     glVertex2f(x + 0.02f, y - 0.15f); // Bottom right
     glVertex2f(x + 0.02f, y + 0.15f); // Top right
     glVertex2f(x - 0.02f, y + 0.15f); // Top left
     glEnd(); // End drawing
-}
 
+    // Reset color to white for other objects
+    glColor3f(1.0f, 1.0f, 1.0f);
+}

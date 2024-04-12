@@ -27,7 +27,7 @@ void Ball::startMovement() {
     // Randomly choose the direction to be either left (-1) or right (1) for horizontal movement
     int direction = (std::rand() % 2) * 2 - 1; // Generates either -1 or 1
 
-    dx = 0.0005f * direction; // Set the horizontal velocity in the chosen direction
+    dx = 0.0003f * direction; // Set the horizontal velocity in the chosen direction
     dy = 0.0f; // Initially, there is no vertical movement
 
     canMove = true; // Enable movement for the ball
