@@ -1,59 +1,63 @@
-// Ensure this header is only included once by the preprocessor in a single compilation
-#pragma once
+#pragma once // Ensure the header is included only once during compilation
 
-// Alternative include guard to prevent multiple inclusions of this header file
-#ifndef GAME_H
+#ifndef GAME_H // Guard against multiple inclusions of the header
 #define GAME_H
 
-// Include the Paddle and Ball class definitions
-#include "paddle.h"
-#include "ball.h"
-// Include the GLFW library for window management and OpenGL context
-#include <GLFW/glfw3.h>
-// Include atomic for thread-safe boolean operations
-#include <atomic>
-// Include thread for managing input in a separate thread
-#include <thread>
+// Include the definition of the Paddle class
+#include "paddle.h"  
+// Include the definition of the Ball class
+#include "ball.h"    
+// Include the GLFW library for handling window operations
+#include <GLFW/glfw3.h>  
+// Include atomic for managing shared variables in concurrent environments
+#include <atomic>    
+// Include thread for handling multithreading
+#include <thread>    
+// Include iostream for input/output operations
+#include <iostream>  
 
-// Definition of the Game class
+// Define the Game class
 class Game {
 private:
-    // Pointer to the GLFW window for rendering and input handling
+    // Pointer to the GLFW window
     GLFWwindow* window;
-    // Instances of Paddle for the left and right paddles in the game
+    // Object representing the left paddle
     Paddle leftPaddle;
+    // Object representing the right paddle
     Paddle rightPaddle;
-    // Atomic boolean flag to safely control the game loop across threads
+    // Atomic boolean to manage the game's running state across threads
     std::atomic<bool> isRunning;
-    // Thread object for processing input independently of the main game loop
+    // Thread for handling input separately
     std::thread inputThread;
-
-    // Instance of Ball for the game ball
+    // Object representing the game ball
     Ball ball;
-    // Boolean flag to track whether the ball has started moving
+    // Flag to check if the ball movement has started
     bool ballStarted;
+    // Scores for player 1 and player 2
+    int scoreP1, scoreP2;
 
-    // Private method to process input (e.g., paddle movements)
+    // Method to handle input processing
     void processInput();
-    // Static method run by the inputThread to continuously check for input
+    // Static method that runs as a thread to process input continuously
     static void inputLoop(Game* game);
+    // Method to update the score based on who scored
+    void updateScore(bool leftScored);
+    // Method to print the current score to the console
+    void printScore() const;
 
 public:
-    // Constructor for Game, sets up the game environment
+    // Constructor to initialize the game
     Game();
-    // Destructor for Game, responsible for cleaning up resources
+    // Destructor to clean up resources
     ~Game();
-    // Starts and runs the main game loop
+    // Method to start the game loop
     void run();
-    // Stops the game, ending the main loop and input thread
+    // Method to stop the game loop
     void stop();
-    // Updates the game state, such as moving the ball and checking for collisions
+    // Method to update the game state
     void update();
-    // Renders the game state to the window
+    // Method to handle drawing of game components
     void draw();
 };
 
-// End of the alternative include guard
-#endif 
-
-
+#endif // End of include guard

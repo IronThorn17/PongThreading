@@ -1,129 +1,141 @@
-// Include the Game class definition
-#include "game.h"
-// Include the standard exception library for throwing runtime errors
-#include <stdexcept> 
-// Include GLFW for window management and OpenGL context
-#include <GLFW/glfw3.h> 
+#include "game.h"  // Include the header file for the Game class
+#include <stdexcept>  // Include standard exceptions library
+#include <GLFW/glfw3.h>  // Include the GLFW library for window management and graphics
 
 // Constructor for the Game class
 Game::Game()
-    : window(nullptr), // Initialize the GLFWwindow pointer to nullptr
-    leftPaddle(-0.9f, 0.0f), // Initialize left paddle at the left side of the screen
-    rightPaddle(0.9f, 0.0f), // Initialize right paddle at the right side of the screen
-    ball(), // Default-initialize the ball
-    ballStarted(false), // Initially, the ball is not moving
-    isRunning(false) { // The game loop is not running yet
+    : window(nullptr), leftPaddle(-0.9f, 0.0f), rightPaddle(0.9f, 0.0f), ball(), ballStarted(false), isRunning(false), scoreP1(0), scoreP2(0) {
 
-    // Initialize GLFW library
+    // Initialize GLFW, throw runtime_error if initialization fails
     if (!glfwInit()) {
-        // If initialization fails, throw a runtime error
         throw std::runtime_error("Failed to initialize GLFW");
     }
 
-    // Create a GLFW window with given dimensions and title
+    // Create a window for the game
     window = glfwCreateWindow(640, 480, "Ping Pong Game", nullptr, nullptr);
     if (!window) {
-        // If window creation fails, terminate GLFW and throw a runtime error
-        glfwTerminate();
+        glfwTerminate();  // Terminate GLFW if window creation fails
         throw std::runtime_error("Failed to create GLFW window");
     }
 
-    // Make the created window's OpenGL context current
+    // Set the current context to the newly created window
     glfwMakeContextCurrent(window);
 
-    // Set the OpenGL viewport based on the window's framebuffer size
+    // Set the viewport size based on the framebuffer size of the window
     int width, height;
     glfwGetFramebufferSize(window, &width, &height);
-    glViewport(0, 0, width, height);
-
-    // Set the OpenGL clear color to black
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    glViewport(0, 0, width, height);  // Set viewport dimensions
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);  // Set the clear color to black
 }
 
 // Destructor for the Game class
 Game::~Game() {
-    stop(); // Stop the game if it's running
+    stop();  // Stop the game processes
     if (inputThread.joinable()) {
-        // If the input thread is running, join it (wait for it to finish)
-        inputThread.join();
+        inputThread.join();  // Ensure the input thread has completed
     }
-    // Clean up: destroy the window and terminate GLFW
-    glfwDestroyWindow(window);
-    glfwTerminate();
+    glfwDestroyWindow(window);  // Destroy the window
+    glfwTerminate();  // Terminate GLFW
 }
 
-// Method to start and run the game loop
+// Starts the main game loop
 void Game::run() {
-    isRunning = true; // Mark the game as running
-    // Start the input handling in a separate thread
-    inputThread = std::thread(&Game::inputLoop, this);
+    printScore();  // Display initial scores
+    isRunning = true;
+    inputThread = std::thread(&Game::inputLoop, this);  // Start the input thread
 
-    // Main game loop: runs until the window is closed or the game is stopped
+    // Game loop
     while (!glfwWindowShouldClose(window) && isRunning) {
-        processInput(); // Process user input
-        update(); // Update game objects
-        draw(); // Draw the game objects to the window
-        // Swap the front and back buffers (double buffering)
-        glfwSwapBuffers(window);
-        // Poll for and process events (e.g., keyboard and mouse events)
-        glfwPollEvents();
+        processInput();  // Handle user input
+        update();  // Update game state
+        draw();  // Render the game
+        glfwSwapBuffers(window);  // Swap the front and back buffers
+        glfwPollEvents();  // Poll for and process events
     }
 
-    // Once the loop ends, ensure the game is properly stopped
-    stop();
+    stop();  // Stop the game
 }
 
-// Method to stop the game
+// Sets the game running state to false
 void Game::stop() {
-    isRunning = false; // Mark the game as not running
+    isRunning = false;
 }
 
-// Method to update game objects each frame
+// Updates the state of the game objects
 void Game::update() {
-    // Update the positions of the paddles
-    leftPaddle.update();
-    rightPaddle.update();
+    leftPaddle.update();  // Update the left paddle position
+    rightPaddle.update();  // Update the right paddle position
 
-    // If the ball has been started, update its position
-    if (ballStarted) {
+    // Check and handle ball movement
+    if (ballStarted && ball.canMove) {
         ball.update(leftPaddle, rightPaddle);
-        // If the ball cannot move (e.g., it was reset), prepare it for restarting
-        if (!ball.canMove) {
-            ballStarted = false; // Ready to start the ball again
-        }
+    }
+
+    // Check for ball crossing the left boundary
+    if (ball.x - ball.radius < -1.0f) {
+        updateScore(false);  // P2 scores
+        ball.canMove = false;
+        ballStarted = false;
+    }
+    // Check for ball crossing the right boundary
+    else if (ball.x + ball.radius > 1.0f) {
+        updateScore(true);  // P1 scores
+        ball.canMove = false;
+        ballStarted = false;
     }
 }
 
-// Method to draw the game objects to the window
+// Renders the game objects
 void Game::draw() {
-    // Clear the window with the clear color set in the constructor
-    glClear(GL_COLOR_BUFFER_BIT);
-
-    // Draw the paddles and the ball
-    leftPaddle.draw();
-    rightPaddle.draw();
-    ball.draw(); // Always draw the ball, even if it hasn't been started
+    glClear(GL_COLOR_BUFFER_BIT);  // Clear the screen
+    leftPaddle.draw();  // Draw the left paddle
+    rightPaddle.draw();  // Draw the right paddle
+    ball.draw();  // Draw the ball
 }
 
-// Method to process user input
+// Processes user input
 void Game::processInput() {
-    // Update paddle movement based on keyboard input
+    // Handle paddle movement based on key presses
     leftPaddle.up = glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS;
     leftPaddle.down = glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS;
-    rightPaddle.up = glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS;
-    rightPaddle.down = glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS;
+    rightPaddle.up = glfwGetKey(window, GLFW_KEY_O) == GLFW_PRESS;
+    rightPaddle.down = glfwGetKey(window, GLFW_KEY_K) == GLFW_PRESS;
 
-    // Start the ball movement if the spacebar is pressed and the ball is not already moving
-    if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS && !ballStarted && !ball.canMove) {
-        ball.startMovement(); // Initiate ball movement
-        ballStarted = true; // Mark the ball as started
+    // Start ball movement on SPACE key press
+    if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS && !ballStarted) {
+        ball.startMovement();
+        ballStarted = true;
+        ball.canMove = true;
     }
 }
 
-// Static method as the entry point for the input thread
+// Updates the score based on which player scored
+void Game::updateScore(bool leftScored) {
+    if (leftScored) {
+        scoreP1++;  // Increment P1's score
+    }
+    else {
+        scoreP2++;  // Increment P2's score
+    }
+    ball.resetPosition();  // Reset the ball position
+    printScore();  // Print the updated scores
+}
+
+// Prints the current score to the console
+void Game::printScore() const {
+    // Clear the console screen based on the operating system
+#ifdef _WIN32
+    system("CLS");
+#else
+    system("clear");
+#endif
+    std::cout << "P1 is Green --- P2 is Yellow" << std::endl;  // Output color information
+    std::cout << "P1 Score: " << scoreP1 << " | P2 Score: " << scoreP2 << std::endl;  // Output the scores
+}
+
+// Input loop to continuously process input while the game is running
 void Game::inputLoop(Game* game) {
-    // Continuously process input while the game is running
     while (game->isRunning) {
-        game->processInput();
+        game->processInput();  // Process input continuously
     }
 }

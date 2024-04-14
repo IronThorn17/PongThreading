@@ -1,86 +1,86 @@
-// Include the header for the Ball class to ensure class definition is available
-#include "Ball.h"
-// Include the header for the Paddle class to use it for collision detection
-#include "paddle.h"
-// Include the GLFW library for creating windows and managing user inputs
-#include <GLFW/glfw3.h>
-// Include cmath for access to the square root and trigonometric functions
-#include <cmath>
-// Include cstdlib for random number generation functions std::rand() and std::srand()
-#include <cstdlib>
-// Include ctime for the current time to seed the random number generator with std::time()
-#include <ctime>
+#include "ball.h"  // Include the header for the Ball class
+#include "paddle.h"  // Include the header for the Paddle class
+#include <GLFW/glfw3.h>  // Include the GLFW library for window management and graphics
+#include <cmath>  // Include the C++ mathematical library
+#include <cstdlib>  // Include the C++ standard library for general utilities
+#include <ctime>  // Include the C++ library for time functions
 
-// Define M_PI for the value of Pi if it is not already defined
+// Define M_PI if it's not already defined
 #ifndef M_PI
 #define M_PI 3.14159265358979323846
 #endif
 
-// Constructor initializing the ball with default values: position at origin, no movement, and a small radius
+// Ball constructor with initial state settings
 Ball::Ball() : x(0.0f), y(0.0f), dx(0.0f), dy(0.0f), radius(0.02f), canMove(false) {}
 
-// Start movement of the ball by determining a random direction and setting initial velocity
+// Initializes ball movement
 void Ball::startMovement() {
-    // Seed the random number generator with current time
+    // Seed the random number generator
     std::srand(static_cast<unsigned int>(std::time(0)));
 
-    // Randomly choose the direction to be either left (-1) or right (1) for horizontal movement
+    // Determine random initial horizontal direction
     int direction = (std::rand() % 2) * 2 - 1; // Generates either -1 or 1
 
-    dx = 0.0003f * direction; // Set the horizontal velocity in the chosen direction
-    dy = 0.0f; // Initially, there is no vertical movement
+    // Set horizontal and vertical speeds
+    dx = 0.0003f * direction; // Set horizontal velocity
+    dy = 0.0f; // Initially no vertical velocity
 
-    canMove = true; // Enable movement for the ball
+    // Allow the ball to start moving
+    canMove = true;
 }
 
-// Update the position and behavior of the ball each frame, considering collisions
+// Updates the position and state of the ball
 void Ball::update(const Paddle& leftPaddle, const Paddle& rightPaddle) {
-    if (!canMove) return; // Do not update if movement is disabled
+    if (!canMove) return; // Do nothing if movement is not allowed
 
-    // Update ball's position based on its velocity
+    // Update ball position based on velocity
     x += dx;
     y += dy;
 
-    // Invert vertical velocity if colliding with the top or bottom of the screen
+    // Invert vertical direction if ball hits the top or bottom of the screen
     if (y + radius >= 1.0f || y - radius <= -1.0f) {
-        dy = -dy;
+        dy = -dy; // Reverse vertical direction
     }
 
-    // Reset ball position if it passes beyond the left or right bounds of the screen
-    if (x + radius > 1.0f || x - radius < -1.0f) {
-        resetPosition();
-    }
-
-    // Check and handle collisions with the paddles
+    // Handle collisions with paddles
     handlePaddleCollision(leftPaddle, rightPaddle);
 }
 
-// Handle collision of the ball with either paddle
-void Ball::handlePaddleCollision(const Paddle& leftPaddle, const Paddle& rightPaddle) {
-    // Calculate the constant speed of the ball for consistent movement after collisions
-    const float constantSpeed = std::sqrt(dx * dx + dy * dy);
+// Resets the ball to the center of the screen
+void Ball::resetPosition() {
+    x = 0.0f; // Center horizontally
+    y = 0.0f; // Center vertically
+    dx = 0.0f; // No horizontal velocity
+    dy = 0.0f; // No vertical velocity
+    canMove = false; // Disable movement
+}
 
-    // Handle collision with the left paddle
+// Checks for and handles collisions with paddles
+void Ball::handlePaddleCollision(const Paddle& leftPaddle, const Paddle& rightPaddle) {
+    // Compute the speed of the ball to maintain after collisions
+    const float constantSpeed = std::sqrt(dx * dx + dy * dy); // Calculate the magnitude of velocity
+
+    // Check for collision with the left paddle
     if (x - radius < leftPaddle.x + 0.02f && x + radius > leftPaddle.x - 0.02f &&
         y + radius > leftPaddle.y - 0.15f && y - radius < leftPaddle.y + 0.15f) {
-        dx = constantSpeed; // Move right at constant speed post-collision
+        dx = constantSpeed; // Set horizontal speed to right
 
-        // Adjust vertical velocity based on where the ball hit the paddle, to control the angle of reflection
-        float hitPoint = (y - leftPaddle.y) / (0.15f * 2); // Normalize hit point to range [-0.5, 0.5]
-        dy = constantSpeed * hitPoint; // Adjust vertical direction based on hit point
+        // Calculate vertical bounce effect based on collision point
+        float hitPoint = (y - leftPaddle.y) / (0.15f * 2);
+        dy = constantSpeed * hitPoint;
     }
 
-    // Handle collision with the right paddle
+    // Check for collision with the right paddle
     if (x + radius > rightPaddle.x - 0.02f && x - radius < rightPaddle.x + 0.02f &&
         y + radius > rightPaddle.y - 0.15f && y - radius < rightPaddle.y + 0.15f) {
-        dx = -constantSpeed; // Move left at constant speed post-collision
+        dx = -constantSpeed; // Set horizontal speed to left
 
-        // Similar adjustment for the vertical velocity as with the left paddle collision
+        // Calculate vertical bounce effect based on collision point
         float hitPoint = (y - rightPaddle.y) / (0.15f * 2);
         dy = constantSpeed * hitPoint;
     }
 
-    // Normalize the ball's velocity to maintain constant speed after adjusting for collision impact
+    // Normalize the speed to maintain constant speed after collision
     float length = std::sqrt(dx * dx + dy * dy);
     if (length != 0) {
         dx = (dx / length) * constantSpeed;
@@ -88,30 +88,21 @@ void Ball::handlePaddleCollision(const Paddle& leftPaddle, const Paddle& rightPa
     }
 }
 
-// Draw the ball on the screen as a filled circle
+// Renders the ball as a circle using OpenGL
 void Ball::draw() const {
-    const float segments = 32.0f; // Number of line segments to use for the circle
-    const float increment = 2.0f * static_cast<float>(M_PI) / segments; // Angle between segments
+    const float segments = 32.0f; // Define number of segments for the circle approximation
+    const float increment = 2.0f * static_cast<float>(M_PI) / segments; // Compute angle increment
     float angle = 0.0f;
 
-    // Start drawing a triangle fan to form a circle
+    // Begin drawing the circle
     glBegin(GL_TRIANGLE_FAN);
-    glVertex2f(x, y); // Center of the circle
+    glVertex2f(x, y); // Start from the center
     for (int i = 0; i <= segments; i++) {
-        // Calculate x and y coordinates of the segment endpoint and add it to the fan
+        // Add vertices to form the circle
         glVertex2f(x + (radius * cosf(angle)), y + (radius * sinf(angle)));
-        angle += increment; // Move to the next segment
+        angle += increment; // Increment the angle
     }
-    glEnd(); // End drawing
-}
-
-// Reset the ball to the center of the screen and stop its movement
-void Ball::resetPosition() {
-    x = 0.0f; // Reset to center horizontally
-    y = 0.0f; // Reset to center vertically
-    dx = 0.0f; // Stop horizontal movement
-    dy = 0.0f; // Stop vertical movement
-    canMove = false; // Disable movement until explicitly re-enabled
+    glEnd(); // Finish drawing
 }
 
 
