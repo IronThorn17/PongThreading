@@ -11,7 +11,18 @@
 #endif
 
 // Ball constructor with initial state settings
-Ball::Ball() : x(0.0f), y(0.0f), dx(0.0f), dy(0.0f), radius(0.02f), canMove(false) {}
+Ball::Ball() : x(0.0f), y(0.0f), dx(0.0f), dy(0.0f), radius(0.02f), canMove(false) {
+    // Start the update thread
+    updateThread = std::thread(&Ball::updateLoop, this);
+}
+
+// Destructor for the Ball class
+Ball::~Ball() {
+    // Join the update thread if it's joinable
+    if (updateThread.joinable()) {
+        updateThread.join();
+    }
+}
 
 // Initializes ball movement
 void Ball::startMovement() {
@@ -22,7 +33,7 @@ void Ball::startMovement() {
     int direction = (std::rand() % 2) * 2 - 1; // Generates either -1 or 1
 
     // Set horizontal and vertical speeds
-    dx = 0.0003f * direction; // Set horizontal velocity
+    dx = 0.003f * direction; // Set horizontal velocity
     dy = 0.0f; // Initially no vertical velocity
 
     // Allow the ball to start moving
@@ -44,6 +55,36 @@ void Ball::update(const Paddle& leftPaddle, const Paddle& rightPaddle) {
 
     // Handle collisions with paddles
     handlePaddleCollision(leftPaddle, rightPaddle);
+}
+
+// Method to update the ball's position based on current movement flags and boundaries
+void Ball::updateLoop() {
+    while (true) {
+        // Acquire lock to ensure thread safety
+        std::lock_guard<std::mutex> lock(mutex);
+
+        // Update ball position based on movement
+        if (canMove) {
+            updatePosition();
+        }
+
+        // Release lock
+
+        // Delay to control update speed
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+    }
+}
+
+// Updates the position of the ball based on its velocity
+void Ball::updatePosition() {
+    // Update ball position based on velocity
+    x += dx;
+    y += dy;
+
+    // Invert vertical direction if ball hits the top or bottom of the screen
+    if (y + radius >= 1.0f || y - radius <= -1.0f) {
+        dy = -dy; // Reverse vertical direction
+    }
 }
 
 // Resets the ball to the center of the screen
@@ -104,6 +145,3 @@ void Ball::draw() const {
     }
     glEnd(); // Finish drawing
 }
-
-
-

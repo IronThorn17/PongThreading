@@ -34,8 +34,8 @@ Game::~Game() {
     if (inputThread.joinable()) {
         inputThread.join();  // Ensure the input thread has completed
     }
-    glfwDestroyWindow(window);  // Destroy the window
     glfwTerminate();  // Terminate GLFW
+    glfwDestroyWindow(window);  // Destroy the window
 }
 
 // Starts the main game loop

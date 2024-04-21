@@ -1,4 +1,4 @@
-﻿  game.cpp
-  main.cpp
+﻿  ball.cpp
+  paddle.cpp
   Generating Code...
-  PingPongGame.vcxproj -> C:\Users\bilal\OneDrive\Desktop\PingPong\PingPongGame\x64\Debug\PingPongGame.exe
+  PingPongGame.vcxproj -> C:\Users\woodr\Documents\School\2024 Spring\CSCI 310-01 Intro to Operating Systems\PongThreadingProject\PongThreading\PingPongGame\x64\Debug\PingPongGame.exe

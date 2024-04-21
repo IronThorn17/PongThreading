@@ -7,6 +7,8 @@
 
 // Include the definition of the Paddle class
 #include "paddle.h"
+#include <thread>
+#include <mutex>
 
 // Definition of the Ball class
 class Ball {
@@ -22,6 +24,8 @@ public:
 
     // Constructor declaration; initializes a new instance of the Ball class
     Ball();
+    // Deconstructor
+    ~Ball();
     // Method to start the ball's movement
     void startMovement();
     // Method to update the ball's position based on paddle positions
@@ -34,6 +38,16 @@ public:
 private:
     // Helper method to handle collisions with the paddles
     void handlePaddleCollision(const Paddle& leftPaddle, const Paddle& rightPaddle);
+    // Continuous update loop for the ball's position
+    void updateLoop();
+
+    // Mutex for thread safety
+    std::mutex mutex;
+    // Thread for continuous updating of the ball's position
+    std::thread updateThread;
+
+    // Helper method to update the ball's position
+    void updatePosition();
 };
 
 // End of the alternative include guard

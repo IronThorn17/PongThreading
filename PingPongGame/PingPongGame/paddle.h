@@ -5,6 +5,9 @@
 #ifndef PADDLE_H
 #define PADDLE_H
 
+#include <mutex>
+#include <thread>
+
 // Declaration of the Paddle class
 class Paddle {
 public:
@@ -17,10 +20,17 @@ public:
 
     // Constructor for the paddle, takes initial position as parameters
     Paddle(float posX, float posY);
+    // Destructor for the paddle
+    ~Paddle();
     // Method to update the paddle's position based on the current movement flags
     void update();
     // Method to draw the paddle on the screen
     void draw() const;
+    void updateLoop();
+
+private:
+    std::mutex mutex;
+    std::thread updateThread;
 };
 
 // End of the include guard
