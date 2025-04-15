@@ -1,2 +1,6 @@
 ﻿  ball.cpp
+  game.cpp
+  main.cpp
+  paddle.cpp
+  Generating Code...
   PongThreading.vcxproj -> D:\Coding Projects\PongThreading\x64\Debug\PongThreading.exe

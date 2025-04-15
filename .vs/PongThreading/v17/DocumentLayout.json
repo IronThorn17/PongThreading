@@ -11,24 +11,24 @@
       "RelativeMoniker": "D:0:0:{FE9CEEBD-2B00-4A37-8D87-82935BA7305B}|PongThreading\\PongThreading.vcxproj|solutionrelative:PongThreading\\paddle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE9CEEBD-2B00-4A37-8D87-82935BA7305B}|PongThreading\\PongThreading.vcxproj|D:\\Coding Projects\\PongThreading\\PongThreading\\ball.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FE9CEEBD-2B00-4A37-8D87-82935BA7305B}|PongThreading\\PongThreading.vcxproj|solutionrelative:PongThreading\\ball.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FE9CEEBD-2B00-4A37-8D87-82935BA7305B}|PongThreading\\PongThreading.vcxproj|D:\\Coding Projects\\PongThreading\\PongThreading\\ball.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FE9CEEBD-2B00-4A37-8D87-82935BA7305B}|PongThreading\\PongThreading.vcxproj|solutionrelative:PongThreading\\ball.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE9CEEBD-2B00-4A37-8D87-82935BA7305B}|PongThreading\\PongThreading.vcxproj|D:\\Coding Projects\\PongThreading\\PongThreading\\ball.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FE9CEEBD-2B00-4A37-8D87-82935BA7305B}|PongThreading\\PongThreading.vcxproj|solutionrelative:PongThreading\\ball.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FE9CEEBD-2B00-4A37-8D87-82935BA7305B}|PongThreading\\PongThreading.vcxproj|D:\\Coding Projects\\PongThreading\\PongThreading\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FE9CEEBD-2B00-4A37-8D87-82935BA7305B}|PongThreading\\PongThreading.vcxproj|solutionrelative:PongThreading\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE9CEEBD-2B00-4A37-8D87-82935BA7305B}|PongThreading\\PongThreading.vcxproj|D:\\Coding Projects\\PongThreading\\PongThreading\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FE9CEEBD-2B00-4A37-8D87-82935BA7305B}|PongThreading\\PongThreading.vcxproj|solutionrelative:PongThreading\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FE9CEEBD-2B00-4A37-8D87-82935BA7305B}|PongThreading\\PongThreading.vcxproj|D:\\Coding Projects\\PongThreading\\PongThreading\\game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FE9CEEBD-2B00-4A37-8D87-82935BA7305B}|PongThreading\\PongThreading.vcxproj|solutionrelative:PongThreading\\game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE9CEEBD-2B00-4A37-8D87-82935BA7305B}|PongThreading\\PongThreading.vcxproj|D:\\Coding Projects\\PongThreading\\PongThreading\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FE9CEEBD-2B00-4A37-8D87-82935BA7305B}|PongThreading\\PongThreading.vcxproj|solutionrelative:PongThreading\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,26 +42,26 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ball.h",
               "DocumentMoniker": "D:\\Coding Projects\\PongThreading\\PongThreading\\ball.h",
               "RelativeDocumentMoniker": "PongThreading\\ball.h",
               "ToolTip": "D:\\Coding Projects\\PongThreading\\PongThreading\\ball.h",
               "RelativeToolTip": "PongThreading\\ball.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAiAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-02-11T21:37:10.432Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "ball.cpp",
               "DocumentMoniker": "D:\\Coding Projects\\PongThreading\\PongThreading\\ball.cpp",
               "RelativeDocumentMoniker": "PongThreading\\ball.cpp",
               "ToolTip": "D:\\Coding Projects\\PongThreading\\PongThreading\\ball.cpp",
               "RelativeToolTip": "PongThreading\\ball.cpp",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAGQAAAAjAAAA",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAAAE4AAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-11T21:37:11.045Z",
               "EditorCaption": ""
@@ -74,7 +74,7 @@
               "RelativeDocumentMoniker": "PongThreading\\paddle.h",
               "ToolTip": "D:\\Coding Projects\\PongThreading\\PongThreading\\paddle.h",
               "RelativeToolTip": "PongThreading\\paddle.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-02-11T21:37:11.176Z",
               "EditorCaption": ""
@@ -87,22 +87,23 @@
               "RelativeDocumentMoniker": "PongThreading\\paddle.cpp",
               "ToolTip": "D:\\Coding Projects\\PongThreading\\PongThreading\\paddle.cpp",
               "RelativeToolTip": "PongThreading\\paddle.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAyAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-11T21:37:11.176Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "game.h",
               "DocumentMoniker": "D:\\Coding Projects\\PongThreading\\PongThreading\\game.h",
               "RelativeDocumentMoniker": "PongThreading\\game.h",
               "ToolTip": "D:\\Coding Projects\\PongThreading\\PongThreading\\game.h",
               "RelativeToolTip": "PongThreading\\game.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-11T21:37:11.177Z"
+              "WhenOpened": "2025-02-11T21:37:11.177Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -112,13 +113,14 @@
               "RelativeDocumentMoniker": "PongThreading\\game.cpp",
               "ToolTip": "D:\\Coding Projects\\PongThreading\\PongThreading\\game.cpp",
               "RelativeToolTip": "PongThreading\\game.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAYwG0AAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-11T21:37:11.177Z"
+              "WhenOpened": "2025-02-11T21:37:11.177Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "main.cpp",
               "DocumentMoniker": "D:\\Coding Projects\\PongThreading\\PongThreading\\main.cpp",
               "RelativeDocumentMoniker": "PongThreading\\main.cpp",

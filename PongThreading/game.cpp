@@ -86,17 +86,17 @@ void Game::run() {
 void Game::processInput() {
     // Moves paddles
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
-        leftPaddle.moveUp();
+        leftPaddle.tryMoveUp();
     }
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
-        leftPaddle.moveDown();
+        leftPaddle.tryMoveDown();
     }
 
     if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) {
-        rightPaddle.moveUp();
+        rightPaddle.tryMoveUp();
     }
     if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS) {
-        rightPaddle.moveDown();
+        rightPaddle.tryMoveDown();
     }
 
     // Moves ball
@@ -106,9 +106,8 @@ void Game::processInput() {
     }
 }
 
+
 void Game::update() {
-    leftPaddle.update();
-    rightPaddle.update();
     ball.update();
 
     // Add game logic such as collision detection, scoring, etc.
