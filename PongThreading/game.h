@@ -1,9 +1,14 @@
 // game.h
+#ifndef GAME_H
+#define GAME_H
+
 #pragma once
 
 #include <GLFW/glfw3.h>
-#include "Paddle.h"
-#include "Ball.h"
+#include "paddle.h"
+#include "ball.h"
+
+class Ball;
 
 class Game {
 public:
@@ -27,3 +32,4 @@ private:
     static int screenW;
     static int screenH;
 };
+#endif

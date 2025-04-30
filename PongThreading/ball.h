@@ -1,8 +1,12 @@
+#ifndef BALL_H
+#define BALL_H
 #pragma once
 
 #include "paddle.h"
 #include <vector>
 #include <utility>
+
+class Game;
 
 class Ball {
 public:
@@ -42,6 +46,7 @@ private:
     float directionX, directionY;
     bool canMove = false;
 
-    Paddle& leftPaddle;
-    Paddle& rightPaddle;
+    const Paddle& leftPaddle;
+    const Paddle& rightPaddle;
 };
+#endif

@@ -19,7 +19,7 @@ bool Paddle::tryMoveDown() {
     }
     return false;
 }
-
+#ifndef UNIT_TEST
 void Paddle::draw() const {
     glBegin(GL_QUADS);
     glVertex2f(x - (width / 2), y - (height / 2));
@@ -28,7 +28,7 @@ void Paddle::draw() const {
     glVertex2f(x + (width / 2), y - (height / 2));
     glEnd();
 }
-
+#endif
 // Static testable logic
 bool Paddle::canMoveUp(float y, float height, float speed) {
     return (y + (height / 2)) <= 1.0f;

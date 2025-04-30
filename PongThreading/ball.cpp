@@ -1,10 +1,10 @@
 #include "ball.h"
 #include "game.h"
-#include <GLFW/glfw3.h>
+#include "GLFW/glfw3.h"
 #include <cmath>
 #include <cstdlib>
 
-Ball::Ball(float startX, float startY, float size, float speed, Paddle& leftPaddle, Paddle& rightPaddle)
+Ball::Ball(float startX, float startY, float size, float speed, const Paddle& leftPaddle, const Paddle& rightPaddle)
     : x(startX), y(startY), size(size), speed(speed), directionX(1.0f), directionY(1.0f),
     leftPaddle(leftPaddle), rightPaddle(rightPaddle) {}
 
@@ -34,7 +34,7 @@ void Ball::moveBall() {
         y = nextPos.second;
     }
 }
-
+#ifndef UNIT_TEST
 void Ball::draw() const {
     const auto vertices = calculateVertices();
     glBegin(GL_TRIANGLE_FAN);
@@ -42,7 +42,7 @@ void Ball::draw() const {
         glVertex2f(vertex.first, vertex.second);
     glEnd();
 }
-
+#endif
 std::vector<std::pair<float, float>> Ball::calculateVertices(int segments) const {
     std::vector<std::pair<float, float>> vertices;
     vertices.emplace_back(x, y); // center

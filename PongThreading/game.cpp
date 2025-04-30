@@ -37,7 +37,7 @@ Game::Game()
       rightPaddle(rightPaddleX, rightPaddleY, rightPaddleW, rightPaddleH, rightPaddleS),
       ball(ballX, ballY, ballR, ballS, leftPaddle, rightPaddle) {
 
-
+#ifndef UNIT_TEST
     if (!glfwInit()) {
         throw std::runtime_error("Failed to initialize GLFW");
     }
@@ -49,7 +49,7 @@ Game::Game()
     }
 
     glfwMakeContextCurrent(window);
-
+#endif
     // Continue with the rest of your initialization...
 
     // Example: Print OpenGL version
@@ -61,13 +61,13 @@ Game::Game()
         std::cerr << "Failed to retrieve OpenGL version" << std::endl;
     }
 }
-
+#ifndef UNIT_TEST
 Game::~Game() {
     // Destructor definition
     // Clean up resources if needed
     glfwTerminate();
 }
-
+#endif
 GLFWwindow* Game::getWindow() const {
     return window;
 }
@@ -82,7 +82,7 @@ void Game::run() {
 
 // Implement other member functions (processInput, update, render)...
 
-
+#ifndef UNIT_TEST
 void Game::processInput() {
     // Moves paddles
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
@@ -105,14 +105,14 @@ void Game::processInput() {
         startGame = false;
     }
 }
-
+#endif
 
 void Game::update() {
     ball.update();
 
     // Add game logic such as collision detection, scoring, etc.
 }
-
+#ifndef UNIT_TEST
 void Game::render() {
     glClear(GL_COLOR_BUFFER_BIT);
 
@@ -123,3 +123,4 @@ void Game::render() {
     glfwSwapBuffers(window);
     glfwPollEvents();
 }
+#endif

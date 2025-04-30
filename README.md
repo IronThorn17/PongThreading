@@ -14,7 +14,8 @@ Download GLFW from the [official website](https://www.glfw.org/download) or inst
 
 
 #### Running GoogleTest using CMake ####
-1) Install GLFW as specified above. 
+1) Install GLFW 3.4 as specified above. Make sure that GLFW is stored somewhere accessible.
+        Ensure CMake v3.14 or newer is downloaded (CMake extension in VSCode or Visual Studio).
 
 2) If using VSCode, install CMake Tools and either either Visual Studio 2022 or the Build Tools only. 
         --> https://visualstudio.microsoft.com/visual-cpp-build-tools/
