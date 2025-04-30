@@ -7,16 +7,10 @@
     <ClCompile Include="C:\Users\Zak\Desktop\PongThreading\ball_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Zak\Desktop\PongThreading\PongThreading\ball.cpp">
+    <ClCompile Include="C:\Users\Zak\Desktop\PongThreading\PongThreading\BallLogic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Zak\Desktop\PongThreading\PongThreading\game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Zak\Desktop\PongThreading\PongThreading\paddle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Zak\Desktop\PongThreading\PongThreading\main.cpp">
+    <ClCompile Include="C:\Users\Zak\Desktop\PongThreading\PongThreading\PaddleLogic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

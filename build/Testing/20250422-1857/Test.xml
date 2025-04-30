@@ -25,11 +25,45 @@
 	ProcessorClockFrequency="2803"
 	>
 	<Testing>
-		<StartDateTime>Apr 29 20:25 Central Daylight Time</StartDateTime>
-		<StartTestTime>1745976313</StartTestTime>
-		<TestList/>
-		<EndDateTime>Apr 29 20:25 Central Daylight Time</EndDateTime>
-		<EndTestTime>1745976313</EndTestTime>
+		<StartDateTime>Apr 30 17:11 Central Daylight Time</StartDateTime>
+		<StartTestTime>1746051099</StartTestTime>
+		<TestList>
+			<Test>./PongTests</Test>
+		</TestList>
+		<Test Status="failed">
+			<Name>PongTests</Name>
+			<Path>.</Path>
+			<FullName>./PongTests</FullName>
+			<FullCommandLine>C:\Users\Zak\Desktop\PongThreading\build\Debug\runTests.exe</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="text/string" name="Exit Code">
+					<Value>Failed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Exit Value">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.0255053</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>C:\Users\Zak\Desktop\PongThreading\build\Debug\runTests.exe</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJy1VWFv2jAQ/Z5fcR9BKlEoCWVIm9RCN1WrWgTptK5ByHWOYNWxI9sp/flzCGMNhTag7T6Q2Dy/Z9+7+Ma5EEwkkBImGk2YK5nCoB/daVQ6+kWeoiHqJyOzaCRFEi4UktjCo8ec8TiaxZjpKJEy4WhQm5ZW9NUwWg2Lt1lB71LqPHzexBTGa+0eFBhdip+uBqBzZp+u89DaxBS+cflIeAlA8cyUFCkKC0bTyrMtcLvErUgnJM04hnbsPMD47gZWMX0174Yqxytd/FpIGbff90Gg4UGqm3UESygYaQhvOtUVZ68PfkE4v5YJo2+3WfnLHcg0yw3e4IsZSc0Mk+KCaEadOr5Zplkh6tIsa3ROm31ApaTqQ7hAiNl8jgoFRXhEs0QUwAvZ1pcEzU9bHkTE4Llebw5MFy9nn1bRO223e12vG5ydwHLB6ALwhSLGGtrYCoo5y+pUqfCZ8JzYrdjUgHfilLTV2Z0Cdg9OQVvFtl2vGhbiBW7h5dfzq+vLYf08QsMvzT3IgiEjiRSEH+6C3znOhaAbdDdOrAb22L59dtp+L9jhhF/biTX1ths7RNZu+G+w1gH3iFz4B+Ti/t/m4v7/5uKwSvxTTpub5p1iXCB9CmU2kJwzbddWL7APwHUFLqQxMq2vsYWvKzNmycJMqFT4ocJfaF3ya5zX5N4g61ATTnNu7f6ByjCKeiBzYd6V2LliZ1PZ3yKgEextLPsapUGiWrFcimoj3t+AQRHhVpXsuUbnk0lZx91y5VZ1lxT6BKz3BmP76XK57B9zFx/51TiO3cN6XXg5CSfOb5y60p4=</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Apr 30 17:11 Central Daylight Time</EndDateTime>
+		<EndTestTime>1746051099</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

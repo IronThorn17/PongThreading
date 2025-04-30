@@ -1,3 +1,63 @@
-Start testing: Apr 29 20:25 Central Daylight Time
+Start testing: Apr 30 17:11 Central Daylight Time
 ----------------------------------------------------------
-End testing: Apr 29 20:25 Central Daylight Time
+1/1 Testing: PongTests
+1/1 Test: PongTests
+Command: "C:/Users/Zak/Desktop/PongThreading/build/Debug/runTests.exe"
+Directory: C:/Users/Zak/Desktop/PongThreading/build
+"PongTests" start time: Apr 30 17:11 Central Daylight Time
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\Zak\Desktop\PongThreading\build\_deps\googletest-src\googletest\src\gtest_main.cc
+[==========] Running 8 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from SampleTest
+[ RUN      ] SampleTest.TrueIsTrue
+[       OK ] SampleTest.TrueIsTrue (0 ms)
+[----------] 1 test from SampleTest (0 ms total)
+
+[----------] 7 tests from BallLogicTest
+[ RUN      ] BallLogicTest.ComputeNextPositionBasic
+C:\Users\Zak\Desktop\PongThreading\ball_test.cpp(32): error: The difference between logic->getX() and 0.08f is 0.079999998211860657, which exceeds 1e-5, where
+logic->getX() evaluates to 0,
+0.08f evaluates to 0.079999998211860657, and
+1e-5 evaluates to 1.0000000000000001e-05.
+[  FAILED  ] BallLogicTest.ComputeNextPositionBasic (4 ms)
+[ RUN      ] BallLogicTest.ComputeNextPositionDiagonal
+C:\Users\Zak\Desktop\PongThreading\ball_test.cpp(43): error: The difference between logic->getX() and 0.056568f is 0.056568000465631485, which exceeds 1e-4, where
+logic->getX() evaluates to 0,
+0.056568f evaluates to 0.056568000465631485, and
+1e-4 evaluates to 0.0001.
+C:\Users\Zak\Desktop\PongThreading\ball_test.cpp(44): error: The difference between logic->getY() and 0.056568f is 0.056568000465631485, which exceeds 1e-4, where
+logic->getY() evaluates to 0,
+0.056568f evaluates to 0.056568000465631485, and
+1e-4 evaluates to 0.0001.
+[  FAILED  ] BallLogicTest.ComputeNextPositionDiagonal (0 ms)
+[ RUN      ] BallLogicTest.CheckTopCollision
+[       OK ] BallLogicTest.CheckTopCollision (0 ms)
+[ RUN      ] BallLogicTest.CheckBottomCollision
+[       OK ] BallLogicTest.CheckBottomCollision (0 ms)
+[ RUN      ] BallLogicTest.CheckRightScore
+[       OK ] BallLogicTest.CheckRightScore (0 ms)
+[ RUN      ] BallLogicTest.CheckLeftScore
+[       OK ] BallLogicTest.CheckLeftScore (0 ms)
+[ RUN      ] BallLogicTest.CalculateVerticesCount
+[       OK ] BallLogicTest.CalculateVerticesCount (0 ms)
+[----------] 7 tests from BallLogicTest (5 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 2 test suites ran. (5 ms total)
+[  PASSED  ] 6 tests.
+[  FAILED  ] 2 tests, listed below:
+[  FAILED  ] BallLogicTest.ComputeNextPositionBasic
+[  FAILED  ] BallLogicTest.ComputeNextPositionDiagonal
+
+ 2 FAILED TESTS
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Failed.
+"PongTests" end time: Apr 30 17:11 Central Daylight Time
+"PongTests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Apr 30 17:11 Central Daylight Time

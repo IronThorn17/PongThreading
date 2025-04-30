@@ -13,6 +13,7 @@ FetchContent_Declare(
 	URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
 )
 
+FetchContent_MakeAvailable(googletest)
 #-- Fetch glfw
 #Remove comments here and add comments to
 #local system implementation if GLFW not downloaded locally
@@ -23,23 +24,21 @@ FetchContent_Declare(
 # 	GIT_TAG latest
 #)
 
-#-- Use GLFW from local system (comment out if not used)
-set(GLFW_DIR "C:/Users/Zak/glfw-3.4") # Change to desired filepath
-add_subdirectory(${GLFW_DIR} ${CMAKE_BINARY_DIR}/glfw_build)
 
-find_package(OpenGL REQUIRED)
+#-- Use GLFW from local system (comment out if not used)
+#set(GLFW_DIR "C:/Users/Zak/glfw-3.4") # Change to desired filepath
+#add_subdirectory(${GLFW_DIR} ${CMAKE_BINARY_DIR}/glfw_build)
+#
+#find_package(OpenGL REQUIRED)
 # -- Make gtest and glfw available on test
 FetchContent_MakeAvailable(googletest) # If fetching glfw, add parameter here
-
 
 #-- Add test executables
 add_executable(runTests
 	test_test.cpp
 	ball_test.cpp
-	PongThreading/ball.cpp
-	PongThreading/game.cpp 
-	PongThreading/paddle.cpp
-	PongThreading/main.cpp
+	PongThreading/BallLogic.cpp
+	PongThreading/PaddleLogic.cpp
 )
 
 #-- Define static GLFW_STATIC
@@ -47,8 +46,6 @@ target_compile_definitions(runTests PRIVATE UNIT_TEST)
 
 # Link needed libraries
 target_link_libraries(runTests
-	glfw
-	OpenGL::GL
 	gtest
 	gtest_main
 )

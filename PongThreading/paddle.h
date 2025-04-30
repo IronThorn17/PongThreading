@@ -1,31 +1,21 @@
 #pragma once
+#include "PaddleLogic.h"
 
 class Paddle {
 public:
-    Paddle(float startX, float startY, float width, float height, float speed);
+    Paddle(float x, float y, float width, float height, float speed)
+    : logic(x, y, width, height, speed) {}
 
-    // Public movement functions for runtime
-    bool tryMoveUp();
-    bool tryMoveDown();
-
-    // Rendering
     void draw() const;
 
-    // Getters for testing
-    float getX() const { return x; }
-    float getY() const { return y; }
-    float getWidth() const { return width; }
-    float getHeight() const { return height; }
-    float getSpeed() const { return speed; }
+    bool tryMoveUp() { return logic.tryMoveUp(); }
+    bool tryMoveDown() { return logic.tryMoveDown(); }
 
-    // Static versions for testing logic independently
-    static bool canMoveUp(float y, float height, float speed);
-    static bool canMoveDown(float y, float height, float speed);
-    static float moveUpIfPossible(float y, float height, float speed);
-    static float moveDownIfPossible(float y, float height, float speed);
+    float getX() const { return logic.getX(); }
+    float getY() const { return logic.getY(); }
+    float getWidth() const { return logic.getWidth(); }
+    float getHeight() const { return logic.getHeight(); }
 
 private:
-    float x, y;
-    float width, height;
-    float speed;
+    PaddleLogic logic;
 };

@@ -3,16 +3,6 @@ C:/Users/Zak/Desktop/PongThreading/build/CMakeFiles/RUN_TESTS.dir
 C:/Users/Zak/Desktop/PongThreading/build/CMakeFiles/INSTALL.dir
 C:/Users/Zak/Desktop/PongThreading/build/CMakeFiles/ALL_BUILD.dir
 C:/Users/Zak/Desktop/PongThreading/build/CMakeFiles/ZERO_CHECK.dir
-C:/Users/Zak/Desktop/PongThreading/build/glfw_build/CMakeFiles/uninstall.dir
-C:/Users/Zak/Desktop/PongThreading/build/glfw_build/CMakeFiles/RUN_TESTS.dir
-C:/Users/Zak/Desktop/PongThreading/build/glfw_build/CMakeFiles/INSTALL.dir
-C:/Users/Zak/Desktop/PongThreading/build/glfw_build/CMakeFiles/ALL_BUILD.dir
-C:/Users/Zak/Desktop/PongThreading/build/glfw_build/src/CMakeFiles/glfw.dir
-C:/Users/Zak/Desktop/PongThreading/build/glfw_build/src/CMakeFiles/update_mappings.dir
-C:/Users/Zak/Desktop/PongThreading/build/glfw_build/src/CMakeFiles/RUN_TESTS.dir
-C:/Users/Zak/Desktop/PongThreading/build/glfw_build/src/CMakeFiles/INSTALL.dir
-C:/Users/Zak/Desktop/PongThreading/build/glfw_build/docs/CMakeFiles/RUN_TESTS.dir
-C:/Users/Zak/Desktop/PongThreading/build/glfw_build/docs/CMakeFiles/INSTALL.dir
 C:/Users/Zak/Desktop/PongThreading/build/_deps/googletest-build/CMakeFiles/RUN_TESTS.dir
 C:/Users/Zak/Desktop/PongThreading/build/_deps/googletest-build/CMakeFiles/INSTALL.dir
 C:/Users/Zak/Desktop/PongThreading/build/_deps/googletest-build/CMakeFiles/ALL_BUILD.dir
