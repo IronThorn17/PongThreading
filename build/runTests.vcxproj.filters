@@ -7,6 +7,9 @@
     <ClCompile Include="C:\Users\Zak\Desktop\PongThreading\ball_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\Zak\Desktop\PongThreading\paddle_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\Zak\Desktop\PongThreading\PongThreading\BallLogic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

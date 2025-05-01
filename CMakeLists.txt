@@ -37,6 +37,7 @@ FetchContent_MakeAvailable(googletest) # If fetching glfw, add parameter here
 add_executable(runTests
 	test_test.cpp
 	ball_test.cpp
+	paddle_test.cpp
 	PongThreading/BallLogic.cpp
 	PongThreading/PaddleLogic.cpp
 )

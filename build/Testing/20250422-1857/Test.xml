@@ -25,8 +25,8 @@
 	ProcessorClockFrequency="2803"
 	>
 	<Testing>
-		<StartDateTime>Apr 30 17:11 Central Daylight Time</StartDateTime>
-		<StartTestTime>1746051099</StartTestTime>
+		<StartDateTime>Apr 30 19:37 Central Daylight Time</StartDateTime>
+		<StartTestTime>1746059821</StartTestTime>
 		<TestList>
 			<Test>./PongTests</Test>
 		</TestList>
@@ -43,7 +43,7 @@
 					<Value>1</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.0255053</Value>
+					<Value>0.0256935</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -58,12 +58,12 @@
 					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
 				</NamedMeasurement>
 				<Measurement>
-					<Value encoding="base64" compression="gzip">eJy1VWFv2jAQ/Z5fcR9BKlEoCWVIm9RCN1WrWgTptK5ByHWOYNWxI9sp/flzCGMNhTag7T6Q2Dy/Z9+7+Ma5EEwkkBImGk2YK5nCoB/daVQ6+kWeoiHqJyOzaCRFEi4UktjCo8ec8TiaxZjpKJEy4WhQm5ZW9NUwWg2Lt1lB71LqPHzexBTGa+0eFBhdip+uBqBzZp+u89DaxBS+cflIeAlA8cyUFCkKC0bTyrMtcLvErUgnJM04hnbsPMD47gZWMX0174Yqxytd/FpIGbff90Gg4UGqm3UESygYaQhvOtUVZ68PfkE4v5YJo2+3WfnLHcg0yw3e4IsZSc0Mk+KCaEadOr5Zplkh6tIsa3ROm31ApaTqQ7hAiNl8jgoFRXhEs0QUwAvZ1pcEzU9bHkTE4Llebw5MFy9nn1bRO223e12vG5ydwHLB6ALwhSLGGtrYCoo5y+pUqfCZ8JzYrdjUgHfilLTV2Z0Cdg9OQVvFtl2vGhbiBW7h5dfzq+vLYf08QsMvzT3IgiEjiRSEH+6C3znOhaAbdDdOrAb22L59dtp+L9jhhF/biTX1ths7RNZu+G+w1gH3iFz4B+Ti/t/m4v7/5uKwSvxTTpub5p1iXCB9CmU2kJwzbddWL7APwHUFLqQxMq2vsYWvKzNmycJMqFT4ocJfaF3ya5zX5N4g61ATTnNu7f6ByjCKeiBzYd6V2LliZ1PZ3yKgEextLPsapUGiWrFcimoj3t+AQRHhVpXsuUbnk0lZx91y5VZ1lxT6BKz3BmP76XK57B9zFx/51TiO3cN6XXg5CSfOb5y60p4=</Value>
+					<Value encoding="base64" compression="gzip">eJy1V+9vojAY/s5f0Y+aTAIbOs/kLpm6XcztNiPs7nZjMRVesVltCS1z+++vgOfAoSK76weh9Xmf5/0FLZOYMcICtMSENZpoHvElGvTcOwGRcH/jJ3cI4kny0B1zFjiLCLCv4O4sJtR3pz6Ewg04DyhIELIlIi83ddNpcjdN6HXP0x4+b8Yjmqy1zQ5KQCJTt9IJEjFRV117aG3GI/pK+QzTDADsmUScLYEpMMhWHG6BzQyXktp4GVJw1Fx7QJO7G5SOx9y67kQxjETyqyDZuP22C4IaBlqKZhXBDIokl5g2taLFeT7wPqb0mgfEe+9m4S99wJdhLOEGXuSYCyIJZ30siKdVKZximiaiuheGjbPTZg9BFPGoh5wFIJ/M5xAB8wDNQK4AGKKJbOtLAPKX6g/MfGToRneOiEhuzj+lo3tqmt2O0Wmfn6DVgngLBC8egC+QCa12sqZYtSIVPGMaY+WKSg0yTrSMtrhaKqB80BLaItbUjeJQEKOtJ7W8uhhdXw6r53FT3KNKMCQ44AzT46tgndWrQrvT7mwqkU5U2Ja6nplWt11SCatyJdbU29UoEVlXw3qHVRXQa+TCOiIX9/82F/f/NxfHdeLfdqrSjAvwnhweDjilRCjb4gvsALiqQJ9LyZfVNbbwVWUmJFhI2+MRHFR4g1Ylv4Z5Re4Nsgo1pl5MVbl/QCSJB2LAYyb3SpRalG4qu7eIfRuLlbcaY9+nkNpNbYllZi6KIe0AKVfZd/4Md+H0J5ELwvrKU18UgzvOtjSjhyluY3k7r6eeMz1KPDMfzdUzKciMwjRZqKhebvsx+SEHccNlsl7TiRxDabdV6ZtafTdiQmL1Fj/QeQWYOm+9ritox1765t4d9iHLg5nfRXCFCa2hm5rVEx3yFasbccH2A/J1on4zPK63CmT7umvX8V8Cjlq+Ui9+X+z5rkARZjpqmDkpFev4wraz7dlcO7u1a59mqydI7WkSfHUkoXzVq3PGrHka0DTlw9rOubQdW/sDp35vHg==</Value>
 				</Measurement>
 			</Results>
 		</Test>
-		<EndDateTime>Apr 30 17:11 Central Daylight Time</EndDateTime>
-		<EndTestTime>1746051099</EndTestTime>
+		<EndDateTime>Apr 30 19:37 Central Daylight Time</EndDateTime>
+		<EndTestTime>1746059821</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

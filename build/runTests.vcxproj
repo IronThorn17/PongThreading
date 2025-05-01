@@ -338,6 +338,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClCompile Include="C:\Users\Zak\Desktop\PongThreading\test_test.cpp" />
     <ClCompile Include="C:\Users\Zak\Desktop\PongThreading\ball_test.cpp" />
+    <ClCompile Include="C:\Users\Zak\Desktop\PongThreading\paddle_test.cpp" />
     <ClCompile Include="C:\Users\Zak\Desktop\PongThreading\PongThreading\BallLogic.cpp" />
     <ClCompile Include="C:\Users\Zak\Desktop\PongThreading\PongThreading\PaddleLogic.cpp" />
   </ItemGroup>
